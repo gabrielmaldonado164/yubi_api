@@ -11,7 +11,7 @@ env = environ.Env()
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
 # Language and timezone
-TIME_ZONE = 'America/Argentina'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 LANGUAGE_CODE = 'en-US'
 SITE_ID = 1
 USE_I18N = True
