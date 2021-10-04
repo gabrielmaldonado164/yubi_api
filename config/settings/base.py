@@ -30,6 +30,13 @@ ROOT_URLCONF = 'config.urls'
 # WSGI
 WSGI_APPLICATION = 'config.wsgi.application'
 
+#Users edit and Authenticacion
+AUTH_USER_MODEL ='users.User'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
+
 # Apps
 DJANGO_APPS = [
     'django.contrib.auth',
@@ -42,7 +49,8 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
 ]
-LOCAL_APPS = [
+LOCAL_APPS = [ 
+    'yubi.users.apps.UsersAppConfig',
 ]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -78,7 +86,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'crum.CurrentRequestUserMiddleware',
+
+
 ]
+
+
 
 # Static files
 STATIC_ROOT = str(ROOT_DIR('staticfiles'))

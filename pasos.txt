@@ -1,0 +1,6 @@
+docker-compose -f local.yml build --> construye las imagenes
+docker-compose -f local.yml up --> correr el stack
+docker-compose -f local.yml down --> detenemos el stack
+export COMPOSE_FILE=local.yml --> variable de entorno para que lo reconosca docker como el yml default
+docker-compose run --rm [service] [commando] --> para ejecutar un comando en algun servicio correspondiente que tengamos
+ej: docker-compose run --rm django python3 manage.py createsuperuser
