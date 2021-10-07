@@ -48,9 +48,12 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    'rest_framework',
 ]
 LOCAL_APPS = [ 
     'yubi.users.apps.UsersAppConfig',
+    'yubi.boxes.apps.BoxesAppConfig',
+
 ]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 

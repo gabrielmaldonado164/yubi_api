@@ -1,0 +1,1 @@
+from yubi.boxes.models.box import Box
