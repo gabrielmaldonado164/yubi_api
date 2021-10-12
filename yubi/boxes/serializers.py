@@ -20,6 +20,7 @@ class BoxSerializer(serializers.Serializer):
     member_limited = serializers.IntegerField() 
 
 
+
 class CreateBoxSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=144)
     slug_name = serializers.SlugField(max_length=40,
@@ -29,4 +30,4 @@ class CreateBoxSerializer(serializers.Serializer):
     about = serializers.CharField(max_length=255, required=False)
 
     def create(self, data):
-        return Box.objects.create(**data)
+        return Box.objects.create(**data) #crea el objecto con los valores del data

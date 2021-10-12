@@ -1,0 +1,1 @@
+from yubi.boxes.views import *

@@ -29,7 +29,7 @@ def create_box(request):
     serializer = CreateBoxSerializer(data=request.data) #le paso los datos del data
     serializer.is_valid(raise_exception=True) #verifico si los datos son validos, o mando un raise en caso de que no
     data = serializer.data #mostramos los datos 
-    box = serializer.save() #guardamos la instancia del create del serialize
+    box = serializer.save() #guardamos la instancia del create del serializer
 
     return Response(BoxSerializer(box).data)
 
