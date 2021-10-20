@@ -9,7 +9,7 @@ from rest_framework import status
 
 
 #Serializer
-from yubi.users.serializers.users import (UserLoginSerializers, UserModelSerializer, UserSignUpSerializers)
+from yubi.users.serializers.users import (UserLoginSerializers, UserModelSerializer, UserSignUpSerializers, AccountVerificationSerializer)
 
 class UserLoginAPIView(APIView):
     """User login API view"""
@@ -37,3 +37,15 @@ class UserSignUpAPIView(APIView):
         data = UserModelSerializer(user).data
 
         return Response(data, status=status.HTTP_201_CREATED)
+
+
+class AccountVerificationAPIView(APIView):
+    """Account verification API View"""
+    def post(self, request, *args, **kwargs):
+        """Handle HTTP POST request"""
+        serializers = AccountVerificationSerializer(data=request.data)
+        serializers.is_valid(raise_exception=True)
+        serializers.save() #esto va de la mano del create
+        data = {'message':'Congratulation, now go share box yubi'}
+
+        return Response(data, status=status.HTTP_200_OK)

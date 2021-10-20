@@ -49,10 +49,10 @@ class YubiModels(models.Model):
         user = get_current_user()
         if user is not None:
             if not self.pk:
-                self.user_creation = user
+                #self.user_creation = user
                 self.date_created = self.date_created
             else:
-                self.user_update = user
+                #self.user_update = user
                 self.date_modified = self.date_modified
 
         super(YubiModels, self).save(*args, **kwargs)
